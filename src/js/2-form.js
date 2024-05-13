@@ -27,6 +27,7 @@ formRefs.form.addEventListener('submit', event => {
   if (formRefs.email.value.trim() === '' || formRefs.message.value.trim() === '') {
     alert('Please, fill in all the fields');
   } else {
+    const data = JSON.parse(localStorage.getItem(FEEDBACK_FORM_KEY));
     localStorage.removeItem(FEEDBACK_FORM_KEY);
     formRefs.form.reset();
     console.log(data); 
